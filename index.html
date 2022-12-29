@@ -6,30 +6,18 @@
     <title>Hello 2023!</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <script language=javascript src="./script/main.js"></script>
+    <script language=javascript src="./script/gen.js"></script>
     <script>
-        var url = "./data/dict.json";
-        var request = new XMLHttpRequest();
-        var shown = 0;
-        request.open("get", url);
-        request.send(null);
-        request.onload = function () {
-            if (request.status == 200) {
-                var json = JSON.parse(request.responseText);
-                var html = `
-                    Success!
-                    `;
-                document.getElementById("sentence").innerHTML = html;
-            }
-        }
+        document.getElementById("sentence").innerHTML = generate();
     </script>
 </head>
 
 <body>
     <div class="main">
-        <div class="title">
+        <!-- <div class="title">
             <h1>Hello 2023!</h1>
             <p>G2212 元旦联欢会</p>
-        </div>
+        </div> -->
         <div id="sentence" class="sentence"></div>
     </div>
 </body>

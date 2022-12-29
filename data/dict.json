@@ -1,3 +1,20 @@
 {
-    "test" : "test"
+    "subject" : [
+        "G2212 班同学"
+    ], 
+    "predicate" : [
+        "举行"
+    ], 
+    "object" : [
+        "元旦联欢会"
+    ], 
+    "attribute" : [
+        "有创意的"
+    ], 
+    "adverbial-1" : [
+        "为了迎接 2023 年"
+    ], 
+    "adverbial-2" : [
+        "正在"
+    ]
 }
