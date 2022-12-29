@@ -16,16 +16,15 @@ function generate() {
             let attribute = choice(json['attribute']);
             let adverbial_1 = choice(json['adverbial-1']);
             let adverbial_2 = choice(json['adverbial-2']);
-            let html = `
-<div class='adverbial'>${adverbial_1}</div>
-，
-<div class='subject'>${subject}</div>
-<div class='adverbial'>${adverbial_2}</div>
-<div class='predicate'>${predicate}</div>
-<div class='attribute'>${attribute}</div>
-<div class='object'>${object}</div>
-。
-                    `;
+            let html = '';
+            html += `<div class='adverbial'>${adverbial_1}</div>`;
+            html += `，`;
+            html += `<div class='subject'>${subject}</div>`;
+            html += `<div class='adverbial'>${adverbial_2}</div>`;
+            html += `<div class='predicate'>${predicate}</div>`;
+            html += `<div class='attribute'>${attribute}</div>`;
+            html += `<div class='object'>${object}</div>`;
+            html += `。`;
             document.getElementById("sentence").innerHTML = html;
         }
     }
