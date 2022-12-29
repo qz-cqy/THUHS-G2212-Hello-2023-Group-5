@@ -9,7 +9,7 @@ function generate() {
     request.onload = function () {
         if (request.status == 200) {
             let json = JSON.parse(request.responseText);
-            console.log(json);
+            // console.log(json);
             let subject = choice(json['subject']);
             let predicate = choice(json['predicate']);
             let object = choice(json['object']);
