@@ -8,12 +8,27 @@
     display: inline;
 }
 .subject {
+    border-bottom: 4px double #228be6;
 }
 .predicate {
+    border-bottom: 2px solid #228be6;
 }
 .object {
+    border-bottom: 2px dashed #228be6;
 }
-.attribute {
+.attribute::before {
+    color: #228be6;
+    content: '(';
 }
-.adverbial {
+.attribute::after {
+    color: #228be6;
+    content: ')';
+}
+.adverbial::before {
+    color: #228be6;
+    content: '[';
+}
+.adverbial::after {
+    color: #228be6;
+    content: ']';
 }
