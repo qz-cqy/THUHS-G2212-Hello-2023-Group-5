@@ -2,7 +2,7 @@ function choice(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 function generate() {
-    let url = "../data/dict.json";
+    let url = "/data/dict.json";
     let request = new XMLHttpRequest();
     let result = 'error';
     request.open("get", url);
