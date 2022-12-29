@@ -1,7 +1,7 @@
 function choice(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
-function generate() {
+function generate(rnd) {
     let url = "./data/dict.json";
     let request = new XMLHttpRequest();
     request.open("get", url);
@@ -10,12 +10,12 @@ function generate() {
         if (request.status == 200) {
             let json = JSON.parse(request.responseText);
             // console.log(json);
-            let subject = choice(json['subject']);
-            let predicate = choice(json['predicate']);
-            let object = choice(json['object']);
-            let attribute = choice(json['attribute']);
-            let adverbial_1 = choice(json['adverbial-1']);
-            let adverbial_2 = choice(json['adverbial-2']);
+            let subject = rnd ? choice(json['subject']) : json['subject'][0];
+            let predicate = rnd ? choice(json['predicate']) : json['subject'][0];
+            let object = rnd ? choice(json['object']) : json['subject'][0];
+            let attribute = rnd ? choice(json['attribute']) : json['subject'][0];
+            let adverbial_1 = rnd ? choice(json['adverbial-1']) : json['subject'][0];
+            let adverbial_2 = rnd ? choice(json['adverbial-2']) : json['subject'][0];
             let html = '';
             html += `<div class='adverbial'>${adverbial_1}</div>`;
             html += `，`;
