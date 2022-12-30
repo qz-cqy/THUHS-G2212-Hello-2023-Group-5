@@ -79,6 +79,7 @@ function generate(rnd) {
                 }, 12000);
             }
             else {
+                setStyle('regenerate', 'disabled', '');
                 document.getElementById("display-area").innerHTML = html;
                 history += `<li class='list'>`;
                 history += html;
@@ -90,6 +91,7 @@ function generate(rnd) {
                 historyHtml += `</ol>`;
                 document.getElementById("history").innerHTML = historyHtml;
                 document.getElementById("copy").innerText = document.getElementById("history").innerText;
+                unsetStyle('regenerate', 'disabled');
             }
         }
     }
