@@ -1,6 +1,7 @@
 function choice(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+let history = '';
 function generate(rnd) {
     let url = "./data/dict.json";
     let request = new XMLHttpRequest();
@@ -25,7 +26,16 @@ function generate(rnd) {
             html += `<div class='attribute'>${attribute}</div>`;
             html += `<div class='object'>${object}</div>`;
             html += `。`;
-            document.getElementById("sentence").innerHTML = html;
+            document.getElementById("display-area").innerHTML = html;
+            history += `<li>`;
+            history += html;
+            history += `</li>`;
+            let historyHtml = '';
+            historyHtml += `历史记录：`;
+            historyHtml += `<ul>`;
+            historyHtml += history;
+            historyHtml += `</ul>`;
+            document.getElementById("history").innerHTML = historyHtml;
         }
     }
 }

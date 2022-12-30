@@ -2,11 +2,13 @@
     margin: 0px;
     padding: 0px;
 }
-.sentence {
+.display-area {
     text-align: center;
     margin: 10px;
     padding: 10px;
     border: 1px solid black;
+}
+.sentence {
     font-family: 楷体;
     font-size: larger;
 }
