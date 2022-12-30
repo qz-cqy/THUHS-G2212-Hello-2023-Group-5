@@ -45,8 +45,9 @@
     display: block;
     border: none;
 }
-.invisible {
-    display: none;
+.copy {
+    height: 0px;
+    width: 0px;
 }
 li.list {
     margin: 3px 0px;
