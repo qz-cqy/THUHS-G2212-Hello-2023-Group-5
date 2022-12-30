@@ -6,12 +6,6 @@ function copy() {
     document.execCommand("Copy");
     alert("复制成功！");
 }
-function setStyle(id, stylename, styleval) {
-    document.getElementById(id).style[stylename] = styleval;
-}
-function unsetStyle(id, stylename) {
-    document.getElementById(id).removeAttribute(stylename);
-}
 let history = '';
 function generate(rnd) {
     let url = "./data/dict.json";
@@ -40,7 +34,7 @@ function generate(rnd) {
             html += `。`;
             html += `</div>`;
             if(rnd) {
-                setStyle('regenerate', 'disabled', 'disabled');
+                document.getElementById('regenerate').disabled = true;
                 let adv1 = 1, sub = 1, adv2 = 1, pre = 1, att = 1, obj = 1;
                 setTimeout(function () { adv1 = 0; }, 2000);
                 setTimeout(function () { sub = 0; }, 4000);
@@ -81,11 +75,11 @@ function generate(rnd) {
                     historyHtml += `</ol>`;
                     document.getElementById("history").innerHTML = historyHtml;
                     document.getElementById("copy").innerText = document.getElementById("history").innerText;
-                    unsetStyle('regenerate', 'disabled');
+                    document.getElementById('regenerate').disabled = false;
                 }, 12000);
             }
             else {
-                setStyle('regenerate', 'disabled', 'disabled');
+                document.getElementById('regenerate').disabled = true;
                 document.getElementById("display-area").innerHTML = html;
                 history += `<li class='list'>`;
                 history += html;
@@ -97,7 +91,7 @@ function generate(rnd) {
                 historyHtml += `</ol>`;
                 document.getElementById("history").innerHTML = historyHtml;
                 document.getElementById("copy").innerText = document.getElementById("history").innerText;
-                unsetStyle('regenerate', 'disabled');
+                document.getElementById('regenerate').disabled = false;
             }
         }
     }
