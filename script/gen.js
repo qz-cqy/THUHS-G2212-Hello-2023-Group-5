@@ -11,11 +11,11 @@ function generate(rnd) {
             let json = JSON.parse(request.responseText);
             // console.log(json);
             let subject = rnd ? choice(json['subject']) : json['subject'][0];
-            let predicate = rnd ? choice(json['predicate']) : json['subject'][0];
-            let object = rnd ? choice(json['object']) : json['subject'][0];
-            let attribute = rnd ? choice(json['attribute']) : json['subject'][0];
-            let adverbial_1 = rnd ? choice(json['adverbial-1']) : json['subject'][0];
-            let adverbial_2 = rnd ? choice(json['adverbial-2']) : json['subject'][0];
+            let predicate = rnd ? choice(json['predicate']) : json['predicate'][0];
+            let object = rnd ? choice(json['object']) : json['object'][0];
+            let attribute = rnd ? choice(json['attribute']) : json['attribute'][0];
+            let adverbial_1 = rnd ? choice(json['adverbial-1']) : json['adverbial-1'][0];
+            let adverbial_2 = rnd ? choice(json['adverbial-2']) : json['adverbial-2'][0];
             let html = '';
             html += `<div class='adverbial'>${adverbial_1}</div>`;
             html += `，`;
