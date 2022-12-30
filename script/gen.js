@@ -18,6 +18,7 @@ function generate(rnd) {
             let adverbial_1 = rnd ? choice(json['adverbial-1']) : json['adverbial-1'][0];
             let adverbial_2 = rnd ? choice(json['adverbial-2']) : json['adverbial-2'][0];
             let html = '';
+            html += `<div class='sentence'>`;
             html += `<div class='adverbial'>${adverbial_1}</div>`;
             html += `，`;
             html += `<div class='subject'>${subject}</div>`;
@@ -26,6 +27,7 @@ function generate(rnd) {
             html += `<div class='attribute'>${attribute}</div>`;
             html += `<div class='object'>${object}</div>`;
             html += `。`;
+            html += `</div>`;
             document.getElementById("display-area").innerHTML = html;
             history += `<li>`;
             history += html;
