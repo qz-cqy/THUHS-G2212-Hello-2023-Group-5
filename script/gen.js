@@ -35,13 +35,13 @@ function generate(rnd) {
             html += `</div>`;
             if(rnd) {
                 setStyle('regenerate', 'disabled', '');
-                let adv1 = 0, sub = 0, adv2 = 0, pre = 0, att = 0, obj = 0;
-                setTimeout(function () { adv1 = 1; }, 2000);
-                setTimeout(function () { sub = 1; }, 4000);
-                setTimeout(function () { adv2 = 1; }, 6000);
-                setTimeout(function () { pre = 1; }, 8000);
-                setTimeout(function () { att = 1; }, 10000);
-                setTimeout(function () { obj = 1; }, 12000);
+                let adv1 = 1, sub = 1, adv2 = 1, pre = 1, att = 1, obj = 1;
+                setTimeout(function () { adv1 = 0; }, 2000);
+                setTimeout(function () { sub = 0; }, 4000);
+                setTimeout(function () { adv2 = 0; }, 6000);
+                setTimeout(function () { pre = 0; }, 8000);
+                setTimeout(function () { att = 0; }, 10000);
+                setTimeout(function () { obj = 0; }, 12000);
                 let intv = setInterval(function() {
                     let subject_t = sub ? choice(json['subject']) : subject;
                     let predicate_t = pre ? choice(json['predicate']) : predicate;
