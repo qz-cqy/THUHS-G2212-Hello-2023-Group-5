@@ -33,17 +33,64 @@ function generate(rnd) {
             html += `<div class='object'>${object}</div>`;
             html += `。`;
             html += `</div>`;
-            document.getElementById("display-area").innerHTML = html;
-            history += `<li class='list'>`;
-            history += html;
-            history += `</li>`;
-            let historyHtml = '';
-            historyHtml += `历史记录：`;
-            historyHtml += `<ol>`;
-            historyHtml += history;
-            historyHtml += `</ol>`;
-            document.getElementById("history").innerHTML = historyHtml;
-            document.getElementById("copy").innerText = document.getElementById("history").innerText;
+            if(rnd) {
+                setStyle('regenerate', 'disabled', '');
+                let adv1 = 0, sub = 0, adv2 = 0, pre = 0, att = 0, obj = 0;
+                setTimeout(function () { adv1 = 1; }, 2000);
+                setTimeout(function () { sub = 1; }, 4000);
+                setTimeout(function () { adv2 = 1; }, 6000);
+                setTimeout(function () { pre = 1; }, 8000);
+                setTimeout(function () { att = 1; }, 10000);
+                setTimeout(function () { obj = 1; }, 12000);
+                let intv = setInterval(function() {
+                    let subject_t = sub ? choice(json['subject']) : subject;
+                    let predicate_t = pre ? choice(json['predicate']) : predicate;
+                    let object_t = obj ? choice(json['object']) : object;
+                    let attribute_t = att ? choice(json['attribute']) : attribute;
+                    let adverbial_1_t = adv1 ? choice(json['adverbial-1']) : adverbial_1;
+                    let adverbial_2_t = adv2 ? choice(json['adverbial-2']) : adverbial_2;
+                    let html_t = '';
+                    html_t += `<div class='sentence'>`;
+                    html_t += `<div class='adverbial'>${adverbial_1_t}</div>`;
+                    html_t += `，`;
+                    html_t += `<div class='subject'>${subject_t}</div>`;
+                    html_t += `<div class='adverbial'>${adverbial_2_t}</div>`;
+                    html_t += `<div class='predicate'>${predicate_t}</div>`;
+                    html_t += `<div class='attribute'>${attribute_t}</div>`;
+                    html_t += `<div class='object'>${object_t}</div>`;
+                    html_t += `。`;
+                    html_t += `</div>`;
+                    document.getElementById("display-area").innerHTML = html_t;
+                }, 100);
+                setTimeout(function () {
+                    clearInterval(intv);
+                    document.getElementById("display-area").innerHTML = html;
+                    history += `<li class='list'>`;
+                    history += html;
+                    history += `</li>`;
+                    let historyHtml = '';
+                    historyHtml += `历史记录：`;
+                    historyHtml += `<ol>`;
+                    historyHtml += history;
+                    historyHtml += `</ol>`;
+                    document.getElementById("history").innerHTML = historyHtml;
+                    document.getElementById("copy").innerText = document.getElementById("history").innerText;
+                    unsetStyle('regenerate', 'disabled');
+                }, 12000);
+            }
+            else {
+                document.getElementById("display-area").innerHTML = html;
+                history += `<li class='list'>`;
+                history += html;
+                history += `</li>`;
+                let historyHtml = '';
+                historyHtml += `历史记录：`;
+                historyHtml += `<ol>`;
+                historyHtml += history;
+                historyHtml += `</ol>`;
+                document.getElementById("history").innerHTML = historyHtml;
+                document.getElementById("copy").innerText = document.getElementById("history").innerText;
+            }
         }
     }
 }

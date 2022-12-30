@@ -7,8 +7,11 @@ function getQueryVariable(variable) {
     }
     return '-1';
 }
-function setStyle(name, stylename, styleval) {
-    document.getElementsByTagName(name)[0].style[stylename] = styleval;
+function setStyle(id, stylename, styleval) {
+    document.getElementById(id).style[stylename] = styleval;
+}
+function unsetStyle(id, stylename) {
+    document.getElementById(id).removeAttribute(stylename);
 }
 (function () {
     let date = new Date();
