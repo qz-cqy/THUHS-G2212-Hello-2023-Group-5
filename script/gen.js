@@ -34,9 +34,9 @@ function generate(rnd) {
             history += `</li>`;
             let historyHtml = '';
             historyHtml += `历史记录：`;
-            historyHtml += `<ul>`;
+            historyHtml += `<ol>`;
             historyHtml += history;
-            historyHtml += `</ul>`;
+            historyHtml += `</ol>`;
             document.getElementById("history").innerHTML = historyHtml;
         }
     }

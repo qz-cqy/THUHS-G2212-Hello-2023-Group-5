@@ -1,7 +1,3 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
 .display-area {
     text-align: center;
     margin: 10px;
@@ -48,4 +44,7 @@
     border-radius: 20px;
     display: block;
     border: none;
+}
+li {
+    margin: 3px;
 }
