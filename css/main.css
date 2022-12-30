@@ -7,6 +7,8 @@
     margin: 10px;
     padding: 10px;
     border: 1px solid black;
+    font-family: 楷体;
+    font-size: larger;
 }
 .subject, .predicate, .object, .attribute, .adverbial {
     display: inline;
@@ -35,4 +37,13 @@
 .adverbial::after {
     color: #228be6;
     content: ']';
+}
+.button {
+    background-color: #ff69b4;
+    color: #ffffff;
+    margin: 0px auto;
+    padding: 10px;
+    border-radius: 20px;
+    display: block;
+    border: none;
 }
