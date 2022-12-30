@@ -6,6 +6,12 @@ function copy() {
     document.execCommand("Copy");
     alert("复制成功！");
 }
+function setStyle(id, stylename, styleval) {
+    document.getElementById(id).style[stylename] = styleval;
+}
+function unsetStyle(id, stylename) {
+    document.getElementById(id).removeAttribute(stylename);
+}
 let history = '';
 function generate(rnd) {
     let url = "./data/dict.json";
