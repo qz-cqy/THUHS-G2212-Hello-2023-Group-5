@@ -1,6 +1,11 @@
 function choice(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+function copy() {
+    document.getElementById("copy").select();
+    document.execCommand("Copy");
+    alert("复制成功！");
+}
 let history = '';
 function generate(rnd) {
     let url = "./data/dict.json";
@@ -29,7 +34,7 @@ function generate(rnd) {
             html += `。`;
             html += `</div>`;
             document.getElementById("display-area").innerHTML = html;
-            history += `<li>`;
+            history += `<li class='list'>`;
             history += html;
             history += `</li>`;
             let historyHtml = '';
@@ -38,6 +43,7 @@ function generate(rnd) {
             historyHtml += history;
             historyHtml += `</ol>`;
             document.getElementById("history").innerHTML = historyHtml;
+            document.getElementById("copy").innerText = document.getElementById("history").innerText;
         }
     }
 }

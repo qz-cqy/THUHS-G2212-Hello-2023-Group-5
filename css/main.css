@@ -45,6 +45,9 @@
     display: block;
     border: none;
 }
-li {
+.invisible {
+    display: none;
+}
+li.list {
     margin: 3px 0px;
 }
