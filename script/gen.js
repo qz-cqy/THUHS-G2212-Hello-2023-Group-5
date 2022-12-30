@@ -34,7 +34,7 @@ function generate(rnd) {
             html += `。`;
             html += `</div>`;
             if(rnd) {
-                setStyle('regenerate', 'disabled', '');
+                setStyle('regenerate', 'disabled', 'disabled');
                 let adv1 = 1, sub = 1, adv2 = 1, pre = 1, att = 1, obj = 1;
                 setTimeout(function () { adv1 = 0; }, 2000);
                 setTimeout(function () { sub = 0; }, 4000);
@@ -79,7 +79,7 @@ function generate(rnd) {
                 }, 12000);
             }
             else {
-                setStyle('regenerate', 'disabled', '');
+                setStyle('regenerate', 'disabled', 'disabled');
                 document.getElementById("display-area").innerHTML = html;
                 history += `<li class='list'>`;
                 history += html;
