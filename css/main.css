@@ -4,6 +4,9 @@
     padding: 10px;
     border: 1px solid black;
 }
+.button-area {
+    display: flex;
+}
 .sentence {
     font-family: 楷体;
     font-size: larger;
